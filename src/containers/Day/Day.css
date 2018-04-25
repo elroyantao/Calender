@@ -1,0 +1,10 @@
+.Day {
+  width: calc((99.99% - 14px) / 7);
+  height: 100px;
+  background: #fff;
+  border: 1px solid #999;
+}
+
+.Day--empty {
+  background: #999
+}

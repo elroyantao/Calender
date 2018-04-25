@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Day /> @renders in default state 1`] = `
+<div
+  className="Day "
+/>
+`;
+
+exports[`<Day /> @renders with classname 1`] = `
+<div
+  className="Day mock-class"
+/>
+`;
+
+exports[`<Day /> @renders with date 1`] = `
+<div
+  className="Day "
+>
+  <div
+    className="Day-date"
+  >
+    14
+  </div>
+</div>
+`;
