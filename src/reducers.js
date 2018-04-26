@@ -6,6 +6,9 @@ import { combineReducers } from 'redux'
 import { LOCATION_CHANGE } from 'react-router-redux'
 
 import dayReducer from './containers/Day/dayReducer'
+import editorReducer from './containers/Editor/editorReducer'
+import reminderReducer from './components/Reminder/reminderReducer'
+
 // import languageProviderReducer from 'containers/LanguageProvider/reducer';
 
 /*
@@ -44,7 +47,8 @@ export default function createReducer(injectedReducers) {
   return combineReducers({
     route: routeReducer,
     selectedDay: dayReducer,
-    // language: languageProviderReducer,
+    editor: editorReducer,
+    reminder: reminderReducer,
     ...injectedReducers
   })
 }

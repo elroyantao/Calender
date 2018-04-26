@@ -22,5 +22,5 @@ class MonthContainer extends Component {
 }
 
 export default connect((state) => ({
-  selectedDay: state.selectedDay.date
+  selectedDay: state.selectedDay
 }))(MonthContainer)

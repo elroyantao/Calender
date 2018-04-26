@@ -4,6 +4,7 @@
 
 import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
+import ReduxThunk from 'redux-thunk'
 import createReducer from './reducers';
 
 
@@ -11,7 +12,8 @@ export default function configureStore(initialState = {}, history) {
   // Create the store with two middlewares
   // 1. routerMiddleware: Syncs the location/URL path to the state
   const middlewares = [
-    routerMiddleware(history)
+    routerMiddleware(history),
+    ReduxThunk
   ];
 
   const enhancers = [

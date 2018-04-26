@@ -1,0 +1,11 @@
+.Reminder {
+  border-bottom: 1px solid black;
+  margin-bottom: 5px;
+}
+.Reminder-time {
+  margin-right: 5px;
+  font-weight: bold;
+}
+.Reminder-message {
+  font-style: italic
+}

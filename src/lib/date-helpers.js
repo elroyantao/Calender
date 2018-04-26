@@ -25,3 +25,11 @@ export function getDaysInMonth(month, year) {
   }
   return daysInMonth[month]
 }
+
+export function getDayId({ date, month, year }) {
+  return `${date}-${month}-${year}`
+}
+
+export function getTimeOrder({ hour = 0, minute = 0 }){
+  return hour * 60 + minute
+}

@@ -29,7 +29,9 @@ export default class Month extends Component {
         month,
         monthLabel: monthLabel[month],
         year,
-        key: `${i}-${monthLabel[month]}-${year}`
+        hour: 0,
+        minute: 0,
+        key: `${i}-${month}-${year}`
       })
     }
     return days
@@ -54,10 +56,10 @@ export default class Month extends Component {
     return (
       <div className="Month">
         {offsetDays.map(({ key }) => (
-          <Day key={key} className="Day--empty"/>
+          <Day key={key} type="empty"/>
         ))}
-        {days.map(({ key, date }) => (
-          <Day key={key} id={key} date={date}/>
+        {days.map((day) => (
+          <Day key={day.key} id={day.key} day={day}/>
         ))}
       </div>
     )
