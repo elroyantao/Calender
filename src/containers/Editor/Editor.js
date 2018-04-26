@@ -36,12 +36,18 @@ class Editor extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      message: ''
+      message: '',
+      color: 'white'
     }
   }
 
   componentDidUpdate({ editorOpen: editorWasOpen }) {
-    if (this.props.editorOpen !== editorWasOpen) this.setState({ message: '' })
+    if (this.props.editorOpen !== editorWasOpen) {
+      this.setState({ 
+        message: '',
+        color: 'white' 
+      })
+    }
   }
 
   handleChangeDate = (date) => {
@@ -61,11 +67,17 @@ class Editor extends Component {
     })
   }
 
+  handleColorChange = (event) => {
+    this.setState({
+      color: event.target.value
+    })
+  }
+
   handleSubmit = () => {
     const { addReminder, day } = this.props
-    const { message } = this.state
+    const { message, color } = this.state
 
-    addReminder(day, message)
+    addReminder(day, message, color)
   }
 
   formatDay = () => {
@@ -75,7 +87,7 @@ class Editor extends Component {
   }
 
   render() {
-    const { message } = this.state
+    const { message, color } = this.state
     const { editorOpen, closeEditor } = this.props
 
     return (
@@ -93,6 +105,12 @@ class Editor extends Component {
             value={this.formatDay()} 
             onChange={this.handleChangeDate}
           />
+          <select value={color} onChange={this.handleColorChange}>
+            <option value="white">White</option>            
+            <option value="cyan">Cyan</option>
+            <option value="pink">Pink</option>
+            <option value="yellow">Yellow</option>
+          </select>
           <div className="Editor-buttonRow">
             <button class="Editor-button" onClick={closeEditor}>Cancel</button>
             <button class="Editor-button" onClick={this.handleSubmit}>Save</button>

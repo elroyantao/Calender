@@ -1,7 +1,21 @@
 .Reminder {
   border-bottom: 1px solid black;
-  margin-bottom: 5px;
+  padding: 5px 0;
 }
+
+.Reminder--white {
+  background: white;
+}
+.Reminder--cyan {
+  background: cyan;
+}
+.Reminder--pink {
+  background: pink;
+}
+.Reminder--yellow {
+  background: yellow;
+}
+
 .Reminder-time {
   margin-right: 5px;
   font-weight: bold;

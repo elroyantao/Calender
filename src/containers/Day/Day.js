@@ -37,8 +37,8 @@ class Day extends Component {
         <div className="Day-addButton" onClick={this.handleAddReminder}>+</div>
         {!!currentReminders.length && (
           <div className="Day-reminders">
-            {currentReminders.map(({ day: { hour, minute }, message }, i) => (
-              <Reminder hour={hour} minute={minute} message={message} key={i}/>
+            {currentReminders.map(({ day: { hour, minute }, message, color }, i) => (
+              <Reminder hour={hour} minute={minute} message={message} color={color} key={i}/>
             ))}
           </div>
         )}

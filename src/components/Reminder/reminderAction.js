@@ -2,13 +2,14 @@ import { generateUniqueId } from '../../lib/utils'
 import { getDayId, getTimeOrder } from '../../lib/date-helpers'
 import { closeEditor } from '../../containers/Editor/editorAction'
 
-export const addReminder = (day, message) => (dispatch) => {
+export const addReminder = (day, message, color) => (dispatch) => {
   const reminderId = generateUniqueId()
   const dayId = getDayId(day)
   const order = getTimeOrder(day)
   const reminder = {
     reminderId,
     message,
+    color,
     day,
     order
   }
